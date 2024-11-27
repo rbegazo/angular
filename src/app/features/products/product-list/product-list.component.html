@@ -1,0 +1,11 @@
+<h2>Lista de Productos</h2>
+<button (click)="redirect()">Create</button>
+<ul>
+    <li *ngFor="let product of products">
+    {{ product.name }} - {{ product.price | currency }}
+    <button (click)="viewDetails(product.id)">Ver Detalle</button>
+    <button (click)="redirectUpdate(product.id)">Actualizar</button>
+    <button (click)="deleteProduct(product.id)">Eliminar</button>
+    </li>
+</ul>
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
